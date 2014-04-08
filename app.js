@@ -14,11 +14,19 @@ Ext.application({
     name: 'ToDo',
 
     requires: [
-        'Ext.MessageBox'
+        'Ext.MessageBox',
+        'Ext.TitleBar',
+        'Ext.form.FieldSet',
+        'Ext.field.Password',
+        'Ext.field.Email'
     ],
 
     views: [
-        'Main'
+        'Main',
+        'Login'
+    ],
+    controllers: [
+    	'Login'
     ],
 
     icon: {
