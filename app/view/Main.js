@@ -4,10 +4,13 @@ Ext.define('ToDo.view.Main', {
    
     config: {
     	layout: 'card',
-    	activeItem: 0,
+    	activeItem: 1,
         items: [
             {
 				xtype: 'login'
+            },
+            {
+            	xtype: 'homepage'
             }
         ]
     }

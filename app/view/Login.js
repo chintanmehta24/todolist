@@ -39,7 +39,7 @@ Ext.define('ToDo.view.Login',{
 					},
 					{
 						xtype: 'button',
-						itemId: 'idBtnSignup',
+						itemId: 'idBtnOpenSignup',
 						text: 'Sign Up',
 						ui: 'plain'
 					}
@@ -75,11 +75,13 @@ Ext.define('ToDo.view.Login',{
 					},
 					{
 						xtype: 'button',
-						text: 'Register'
+						text: 'Register',
+						itemId: 'idBtnRegister'
 					},
 					{
 						xtype: 'button',
-						text: 'Cancel'
+						text: 'Cancel',
+						itemId: 'idBtnRegisterCancel'
 					}
 				]	
 			}

@@ -1,23 +1,44 @@
 Ext.define('ToDo.controller.Login',{
 	extend: 'Ext.app.Controller',
 	config: {
+		refs: {
+			loginView : 'login',
+			mainView : 'main',
+			
+			btnLogin : 'login formpanel[itemId=idFrmPnlLogin] button[itemId=idBtnLogin]',
+			btnSignUpView : 'login formpanel[itemId=idFrmPnlLogin] button[itemId=idBtnOpenSignup]',
+			btnRegister : 'login formpanel[itemId=idFrmPnlSignup] button[itemId=idBtnRegister]',
+			btnRegisterCancel : 'login formpanel[itemId=idFrmPnlSignup] button[itemId=idBtnRegisterCancel]'
+		},
 		control: {
-			'login formpanel[itemId=idFrmPnlLogin] button[itemId=idBtnLogin]': {
+			btnLogin: {
 				tap: 'onLogin'
 			},
-			'login formpanel[itemId=idFrmPnlLogin] button[itemId=idBtnSignup]': {
+			btnSignUpView: {
 				tap: 'openSignUpView'
 			},
-			'login formpanel[itemId=idFrmPnlSignUp] button': {
-				tap: 'onLogin'
+			btnRegister: {
+				tap: 'createNewUser'
+			},
+			btnRegisterCancel: {
+				tap: 'openLoginView'
 			}
 		}
 	},
-	onLogin: function(btn,e,eOpts){
-		alert('Login');
-	},
 	openSignUpView: function(btn,e,eOpts){
-		var cardLayout = btn.up('login');
-		cardLayout.setActiveItem(1);
+		//var cardLayout = btn.up('login');
+		this.getLoginView().setActiveItem(1);
+	},
+	openLoginView: function(btn,e,eOpts){
+		this.getLoginView().setActiveItem(0);
+	},
+	onLogin: function(btn,e,eOpts){
+		var me = this;
+		
+		me.getMainView().setActiveItem('homepage');
+	},
+	createNewUser: function(btn, e, eOpts){
+		alert('Register');
 	}
+	
 });

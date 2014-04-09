@@ -23,7 +23,8 @@ Ext.application({
 
     views: [
         'Main',
-        'Login'
+        'Login',
+        'HomePage'
     ],
     controllers: [
     	'Login'
